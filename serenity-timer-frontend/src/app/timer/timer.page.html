@@ -1,0 +1,26 @@
+<ion-content>
+  <div class="content">
+    <countdown #cd [config]="config"></countdown>
+    <ion-label>{{formGroup.get('countdownPickedTime')?.value}}</ion-label>
+    <ion-range
+      [value]="timerRangeValue"
+      [min]="1"
+      [max]="60"
+      [formControl]="toControl(formGroup.get('countdownPickedTime'))"
+      class="timer-range-input"
+    >
+      <ion-label slot="start" class="timer-labels">1</ion-label>
+      <ion-label slot="end" class="timer-labels">60</ion-label>
+    </ion-range>
+    <ion-button
+      [disabled]="!formGroup.get('countdownTime')?.value"
+      (click)="toggleTimer()"
+      size="large"
+      color="success"
+      >Start timer</ion-button
+    >
+    <ion-button [disabled]="!isTimerStart" size="large" color="danger"
+      >Stop timer</ion-button
+    >
+  </div>
+</ion-content>

@@ -1,0 +1,6 @@
+{
+    "eslint.workingDirectories": [
+      "./serenity-timer-frontend",
+      "./serenity-timer-backend"
+    ]
+}
